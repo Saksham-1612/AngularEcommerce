@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="add-product card">
+    <h1 class="title">Update Product</h1>
+    <p class="message">{{ updateMessage }}</p>
+    <form
+      action=""
+      #updateProductForm="ngForm"
+      (ngSubmit)="updateProduct(updateProductForm.value)"
+      class="promo form"
+    >
+      <input
+        class="input_field"
+        name="name"
+        placeholder="Product Name"
+        type="text"
+        [(ngModel)]="productData && productData.name"
+      />
+      <input
+        class="input_field"
+        name="price"
+        placeholder="Product Price"
+        type="text"
+        [(ngModel)]="productData && productData.price"
+      />
+      <input
+        class="input_field"
+        name="color"
+        placeholder="Color"
+        type="text"
+        [(ngModel)]="productData && productData.color"
+      />
+      <textarea
+        class="input_field"
+        name="desc"
+        placeholder="Description"
+        [(ngModel)]="productData && productData.desc"
+      ></textarea>
+      <input
+        class="input_field"
+        name="image"
+        placeholder="Image Url"
+        [(ngModel)]="productData && productData.image"
+      />
+      <input
+        type="hidden"
+        name="id"
+        [(ngModel)]="productData && productData.id"
+      />
+      <button type="submit" class="form-btn">Update Product</button>
+    </form>
+  </div>
+</div>

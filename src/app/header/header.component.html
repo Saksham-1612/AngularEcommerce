@@ -1,0 +1,41 @@
+<nav class="nav">
+  <h1 *ngIf="menuType === 'default'" routerLink="/" style="cursor: pointer">
+    Ecommerce
+  </h1>
+  <h1 *ngIf="menuType === 'seller'" routerLink="/" style="cursor: pointer">
+    Seller Dashboard
+  </h1>
+  <div *ngIf="menuType === 'default'" class="input-container">
+    <input
+      type="text"
+      name="text"
+      class="input"
+      placeholder="Search..."
+      id="searchInput"
+    />
+    <span class="icon">
+      <img
+        src="assets/svg/search.svg"
+        alt="Search"
+        width="19px"
+        height="19px"
+      />
+    </span>
+  </div>
+  <div [ngSwitch]="menuType">
+    <ul *ngSwitchCase="'default'">
+      <li><a routerLink="/">Home</a></li>
+      <li><a href="">Login</a></li>
+      <li><a routerLink="/seller-auth">Seller</a></li>
+      <li><a href="">Cart(0)</a></li>
+    </ul>
+    <ul *ngSwitchCase="'seller'">
+      <li><a routerLink="/seller-home">Product Lists</a></li>
+      <li><a routerLink="seller-add-product">Add Product</a></li>
+      <li><a style="cursor: pointer" (click)="logout()">LogOut</a></li>
+      <li>
+        <a style="color: #8458b3">{{ sellerName }}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

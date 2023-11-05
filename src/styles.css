@@ -1,1 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --bg-color: #fff;
+    /* Background color */
+    --main-color: #323232;
+    /* Main text and border color */
+    --font-color: #323232;
+    /* Font color */
+    --font-color-sub: #666;
+    /* Subtle font color */
+    --input-focus: #2d8cf0;
+    /* Input focus color */
+}
+
+/* Add other common styles that use these variables here */
+
+
+body {
+    font-family: sans-serif;
+}
+
+/* Container class */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+
+/* Update the Container class to set equal margins */
+.container {
+    width: 100%;
+    padding: 0 15px;
+    /* Apply equal padding on both sides */
+    margin: 0 auto;
+    /* Center the content horizontally */
+    max-width: 100%;
+    /* Ensure the content remains within the viewport */
+}
+
+/* Optional max-width for larger screens */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        /* Adjust as needed */
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            max-width: 960px;
+            /* Adjust as needed */
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1140px;
+            /* Adjust as needed */
+        }
+    }
+}
+
+
+/* form classes */
+.form {
+    margin: 1rem .75rem;
+    padding: 2rem 1.5rem;
+    border: 2px solid red;
+    border-radius: .5rem;
+    text-align: center;
+    width: 20rem;
+}
+
+.form-input {
+    padding: .5rem 1rem;
+    margin: .5rem 1rem;
+    border-radius: .25rem;
+}
+
+.form-btn {
+    width: 5rem;
+    text-align: center;
+    margin: auto;
+    padding: .5rem .5rem;
+    background: yellow;
+    cursor: pointer;
+    border-radius: .5rem;
+}

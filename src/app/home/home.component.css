@@ -1,0 +1,24 @@
+.popular-products {
+    object-fit: contain;
+    height: 600px;
+    width: 100%;
+}
+
+.carousel {
+    margin: 1rem 0;
+}
+
+.carousel-caption {
+    border-radius: 1rem;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-control-prev-icon {
+    background-color: brown;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background: rgba(0, 0, 0, 0.5);
+}

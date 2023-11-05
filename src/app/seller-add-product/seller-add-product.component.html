@@ -1,0 +1,42 @@
+<div class="add-product card">
+  <h1 class="title">Add New Product</h1>
+  <p *ngIf="addProductMessage != undefined" class="message">
+    Product Added Successfully
+  </p>
+  <form
+    action=""
+    #addProductForm="ngForm"
+    (ngSubmit)="addProduct(addProductForm.value)"
+    class="promo form"
+  >
+    <input
+      class="input_field"
+      name="name"
+      placeholder="Product Name"
+      type="text"
+      ngModel
+    />
+    <input
+      class="input_field"
+      name="price"
+      placeholder="Product Price"
+      type="text"
+      ngModel
+    />
+    <input
+      class="input_field"
+      name="color"
+      placeholder="Color"
+      type="text"
+      ngModel
+    />
+    <textarea
+      class="input_field"
+      name="desc"
+      placeholder="Description"
+      ngModel
+    ></textarea>
+    <input class="input_field" name="image" placeholder="Image Url" ngModel />
+    <button type="submit" class="form-btn">Add Product</button>
+  </form>
+</div>

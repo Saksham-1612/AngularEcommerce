@@ -22,7 +22,8 @@
     "lib": ["ES2022", "dom"],
     "paths": {
       "@ngneat/overview": ["node_modules/@ngneat/overview"]
-    }
+    },
+    "types": ["body-parser"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

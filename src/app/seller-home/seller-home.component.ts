@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../data-types';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-seller-home',
@@ -13,7 +14,10 @@ export class SellerHomeComponent {
   productMessage: string | undefined;
   icon = faTrash;
   editIcon = faEdit;
-  constructor(private product: ProductService) {}
+  constructor(
+    private product: ProductService,
+    private toast: HotToastService
+  ) {}
 
   List(): void {
     this.product.getProduct().subscribe((result: any) => {
@@ -24,6 +28,7 @@ export class SellerHomeComponent {
 
   ngOnInit(): void {
     this.List();
+    this.toast.success('Welcome to Seller Dashboard!');
   }
 
   deleteProduct(id: number): void {
@@ -38,5 +43,6 @@ export class SellerHomeComponent {
       this.List();
       console.log(result);
     });
+    this.toast.success('Deleted Successfully');
   }
 }

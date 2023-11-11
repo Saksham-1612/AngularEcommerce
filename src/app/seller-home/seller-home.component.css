@@ -1,6 +1,12 @@
 .product-list {
     padding: 1rem;
-    margin: 0 4rem;
+    margin: 0 2rem;
+    /* Adjust the margin for smaller screens */
+
+    @media only screen and (max-width: 768px) {
+        margin: 0;
+        /* Remove margin for smaller screens */
+    }
 }
 
 .heading {
@@ -11,6 +17,13 @@
 table {
     text-align: center;
     border-collapse: collapse;
+    width: 100%;
+    /* Make the table take 100% width of its container */
+
+    @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+    }
 }
 
 table td,
@@ -18,11 +31,21 @@ table th {
     border: 1px grey solid;
     padding: 10px;
     min-width: 10rem;
+
+    @media only screen and (max-width: 768px) {
+        min-width: auto;
+        /* Remove minimum width for smaller screens */
+    }
 }
 
 img {
     width: 100px;
     height: auto;
+
+    @media only screen and (max-width: 768px) {
+        width: 50px;
+        /* Adjust image size for smaller screens */
+    }
 }
 
 .deleted-msg {
@@ -31,4 +54,17 @@ img {
 
 .actions>fa-icon {
     margin: 0 4px;
+}
+
+@media only screen and (max-width: 768px) {
+    .product-list {
+        margin: 0;
+        /* Remove margin for smaller screens */
+    }
+
+    table td,
+    table th {
+        min-width: auto;
+        /* Remove minimum width for smaller screens */
+    }
 }

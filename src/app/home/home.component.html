@@ -1,7 +1,7 @@
 <div class="">
   <ngb-carousel class="carousel" *ngIf="popularProducts">
     <ng-template *ngFor="let item of popularProducts" ngbSlide>
-      <div routerLink="/" class="picsum-img-wrapper">
+      <div routerLink="details/{{ item.id }}" class="picsum-img-wrapper">
         <img
           class="popular-products"
           [src]="item.image"
@@ -15,4 +15,42 @@
     </ng-template>
   </ngb-carousel>
 </div>
-<div class="product-list"></div>
+
+<div class="product-list container justify-content-center">
+  <h1 class="m-auto text-center">Trendy Products</h1>
+  <div class="row row-gap-4 p-3">
+    <div
+      *ngFor="let product of trendyProducts"
+      class="col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center"
+    >
+      <div class="card" style="width: 18rem">
+        <img
+          [src]="product.image"
+          class="card-img-top"
+          style="height: 200px"
+          alt="..."
+        />
+        <div class="card-body mb-4" style="max-height: 150px; overflow: hidden">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <div class="card-text">
+            <p class="mb-0">{{ product.price }}</p>
+            <p class="mt-0">{{ product.color }}</p>
+          </div>
+          <div>
+            <a
+              routerLink="/details/{{ product.id }}"
+              class="btn btn-primary mx-2"
+              >View Details</a
+            >
+            <a
+              href="#"
+              class="btn btn-success mx-2"
+              (click)="toastAdd(product.name)"
+              >Add to Cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

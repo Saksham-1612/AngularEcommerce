@@ -1,0 +1,15 @@
+.product-image {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.btn-add-to-cart,
+.btn-buy-now {
+    width: 50%;
+}

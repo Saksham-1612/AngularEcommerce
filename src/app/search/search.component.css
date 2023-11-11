@@ -1,0 +1,33 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-item {
+    margin: 1.5rem 0;
+    border: 1px solid #ddd;
+    padding: 1rem;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    /* Adjust the max-height as needed */
+}
+
+.details {
+    padding-left: 1rem;
+}
+
+.details h6 {
+    margin-bottom: 0.5rem;
+}
+
+.details p {
+    margin-bottom: 0.5rem;
+}
+
+.details p:last-child {
+    margin-bottom: 0;
+}

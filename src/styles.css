@@ -26,48 +26,6 @@ body {
     font-family: sans-serif;
 }
 
-/* Container class */
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 1rem;
-}
-
-/* Update the Container class to set equal margins */
-.container {
-    width: 100%;
-    padding: 0 15px;
-    /* Apply equal padding on both sides */
-    margin: 0 auto;
-    /* Center the content horizontally */
-    max-width: 100%;
-    /* Ensure the content remains within the viewport */
-}
-
-/* Optional max-width for larger screens */
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-        /* Adjust as needed */
-    }
-
-    @media (min-width: 992px) {
-        .container {
-            max-width: 960px;
-            /* Adjust as needed */
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .container {
-            max-width: 1140px;
-            /* Adjust as needed */
-        }
-    }
-}
 
 
 /* form classes */

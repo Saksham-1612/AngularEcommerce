@@ -1,3 +1,4 @@
+import { HotToastModule, HotToastService } from '@ngneat/hot-toast';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
@@ -11,12 +12,17 @@ import { Product } from './../data-types';
 export class SellerAddProductComponent {
   addProductMessage: string | undefined = undefined;
 
-  constructor(private router: Router, private product: ProductService) {}
+  constructor(
+    private router: Router,
+    private product: ProductService,
+    private toast: HotToastService
+  ) {}
 
   addProduct(data: Product) {
     this.product.addProduct(data).subscribe((result: any) => {
       if (result) {
         this.addProductMessage = 'Product added successfully';
+        this.toast.success('Product added successfully');
       }
       setTimeout(() => {
         this.addProductMessage = undefined;

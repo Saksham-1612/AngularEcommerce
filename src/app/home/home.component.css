@@ -2,16 +2,31 @@
     object-fit: contain;
     height: 600px;
     width: 100%;
+
+    @media only screen and (max-width: 768px) {
+        height: auto;
+        /* Adjust height for smaller screens */
+    }
 }
 
 .carousel {
     margin: 1rem 0;
+
+    @media only screen and (max-width: 768px) {
+        margin: 0;
+        /* Remove margin for smaller screens */
+    }
 }
 
 .carousel-caption {
     border-radius: 1rem;
     color: black;
     background: rgba(255, 255, 255, 0.5);
+
+    @media only screen and (max-width: 768px) {
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
 }
 
 .carousel-control-prev-icon {
@@ -20,5 +35,16 @@
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(164, 13, 13, 0.5);
+}
+
+/* product */
+
+.product-item img {
+    width: 200px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        /* Make the image responsive for smaller screens */
+    }
 }

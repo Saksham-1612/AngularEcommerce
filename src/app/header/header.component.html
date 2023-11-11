@@ -1,4 +1,9 @@
-<nav class="nav">
+<nav class="nav" [ngClass]="{ active: isMenuOpen }">
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <h1 *ngIf="menuType === 'default'" routerLink="/" style="cursor: pointer">
     Ecommerce
   </h1>
@@ -6,23 +11,34 @@
     Seller Dashboard
   </h1>
   <div *ngIf="menuType === 'default'" class="input-container">
-    <input
-      type="text"
-      name="text"
-      class="input"
-      placeholder="Search..."
-      id="searchInput"
-    />
-    <span class="icon">
-      <img
-        src="assets/svg/search.svg"
-        alt="Search"
-        width="19px"
-        height="19px"
+    <div class="input-wrapper">
+      <input
+        type="text"
+        name="text"
+        class="input"
+        #searchInput
+        placeholder="Search..."
+        id="searchInput"
+        (keyup)="searchProduct($event)"
+        (blur)="hideSearch()"
       />
-    </span>
+      <div class="search-button" (click)="submitSearch(searchInput.value)">
+        Q
+      </div>
+    </div>
+    <div class="suggested-result">
+      <ul class="ul-search" *ngIf="searchResult && searchResult.length > 0">
+        <li *ngFor="let item of searchResult">
+          <a
+            routerLink="/details{{ item.id }}"
+            (mousedown)="redirectToDetails(item.id)"
+            >{{ item.name }}</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
-  <div [ngSwitch]="menuType">
+  <div [ngSwitch]="menuType" class="nav-links">
     <ul *ngSwitchCase="'default'">
       <li><a routerLink="/">Home</a></li>
       <li><a href="">Login</a></li>

@@ -3,6 +3,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Product, User, UserLogin } from '../data-types';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +11,15 @@ import { Router } from '@angular/router';
 export class SellerService {
   isSellerLoggedIn = new BehaviorSubject(false);
   isLoginError = new EventEmitter(false);
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private toast: HotToastService
+  ) {}
 
   userSignUp(data: User) {
     let result = this.http
-      .post('http://localhost:3000/seller', data, {
+      .post('https://ecommerce-ty16.onrender.com/seller', data, {
         observe: 'response',
       })
       .subscribe((result) => {
@@ -29,7 +34,7 @@ export class SellerService {
     console.log(data);
     this.http
       .get(
-        `http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
+        `https://ecommerce-ty16.onrender.com/seller?email=${data.email}&password=${data.password}`,
         {
           observe: 'response',
         }
